@@ -62,6 +62,7 @@ public class HelloWorld {
 
       // The admin API lets us create, manage and delete tables
       Admin admin = connection.getAdmin();
+      System.out.println("test msg");
       // [END connecting_to_bigtable]
 
       // [START creating_a_table]
