@@ -42,7 +42,6 @@ import java.io.IOException;
  */
 public class HelloWorld {
 
-  // Refer to table metadata names by byte array in the HBase API
   private static final byte[] TABLE_NAME = Bytes.toBytes("Hello-Bigtable");
   private static final byte[] COLUMN_FAMILY_NAME = Bytes.toBytes("cf1");
   private static final byte[] COLUMN_NAME = Bytes.toBytes("greeting");
@@ -101,7 +100,6 @@ public class HelloWorld {
       }
       // [END writing_rows]
 
-      // [START getting_a_row]
       // Get the first greeting by row key
       String rowKey = "greeting0";
       Result getResult = table.get(new Get(Bytes.toBytes(rowKey)));
@@ -123,7 +121,6 @@ public class HelloWorld {
       // [END scanning_all_rows]
 
       // [START deleting_a_table]
-      // Clean up by disabling and then deleting the table
       print("Delete the table");
       admin.disableTable(table.getName());
       admin.deleteTable(table.getName());
